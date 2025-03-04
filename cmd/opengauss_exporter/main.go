@@ -58,17 +58,17 @@ type Args struct {
 func (a *Args) RetrieveTargetURL() []string {
 	var dsn string
 	if a.DbURL != nil && *a.DbURL != "" {
-		log.Infof("retrieve target url %s from command line", exporter.ShadowDSN(*a.DbURL))
+		log.Infof("retrieve target url from command line")
 		dsn = *a.DbURL
 	} else {
 		if res := os.Getenv("OG_EXPORTER_URL"); res != "" {
-			log.Infof("retrieve target url %s from PG_EXPORTER_URL", exporter.ShadowDSN(res))
+			log.Infof("retrieve target url from PG_EXPORTER_URL")
 			dsn = res
 		} else if res := os.Getenv("PG_EXPORTER_URL"); res != "" {
-			log.Infof("retrieve target url %s from PG_EXPORTER_URL", exporter.ShadowDSN(res))
+			log.Infof("retrieve target url from PG_EXPORTER_URL")
 			dsn = res
 		} else if res := os.Getenv("DATA_SOURCE_NAME"); res != "" {
-			log.Infof("retrieve target url %s from DATA_SOURCE_NAME", exporter.ShadowDSN(res))
+			log.Infof("retrieve target url from DATA_SOURCE_NAME")
 			dsn = res
 		} else {
 			log.Warnf("fail retrieving target url, fallback on default url: %s", defaultPGURL)
