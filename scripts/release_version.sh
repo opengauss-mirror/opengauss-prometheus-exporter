@@ -1,22 +1,14 @@
 #!/bin/bash
 
-# -----------------------------------------------------------------------------
-# Copyright (c) 2020-2021 Yunhe Enmo (Beijing) Information Technology Co., Ltd
-#
-# mtk is licensed under Mulan PSL v2.
+# Copyright (c) 2026 Huawei Technologies Co., Ltd.
+# opengauss-prometheus-exporter is licensed under Mulan PSL v2.
 # You can use this software according to the terms and conditions of the Mulan PSL v2.
 # You may obtain a copy of Mulan PSL v2 at:
-#
 #          http://license.coscl.org.cn/MulanPSL2
-#
 # THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
 # EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
 # MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
 # See the Mulan PSL v2 for more details.
-# -----------------------------------------------------------------------------
-# Author        : Bin Liu
-# File          : release_version.sh
-# -----------------------------------------------------------------------------
 
 VERSION_FILE="pkg/version/version.go"
 VERSION=`grep 'var version' ${VERSION_FILE} | sed -E 's/.*"(.+)"$$/v\1/'`
